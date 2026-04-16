@@ -1,30 +1,30 @@
 {
-  "version": "1.0.0",
-  "lastUpdated": "2026-04-16T00:00:00Z",
-  "favorites": [
-    {
-      "id": "github",
-      "url": "https://github.com",
-      "title": "GitHub",
-      "description": "Code hosting and collaboration platform.",
-      "tags": ["development", "git", "tools"],
-      "favicon": null
-    },
-    {
-      "id": "astro-docs",
-      "url": "https://docs.astro.build",
-      "title": "Astro Documentation",
-      "description": "",
-      "tags": ["development", "documentation", "frontend"],
-      "favicon": null
-    },
-    {
-      "id": "mdn-web-docs",
-      "url": "https://developer.mozilla.org",
-      "title": "MDN Web Docs",
-      "description": "",
-      "tags": ["documentation", "web", "reference"],
-      "favicon": null
-    }
-  ]
+    "version": "1.0.0",
+    "lastUpdated": "2026-04-16T00:00:00Z",
+    "favorites": [
+        {
+            "id": "github",
+            "url": "https://github.com",
+            "title": "",
+            "description": "",
+            "tags": ["development", "git", "tools"],
+            "favicon": null
+        },
+        {
+            "id": "astro-docs",
+            "url": "https://docs.astro.build",
+            "title": "",
+            "description": "",
+            "tags": ["development", "documentation", "frontend"],
+            "favicon": null
+        },
+        {
+            "id": "mdn-web-docs",
+            "url": "https://developer.mozilla.org",
+            "title": "",
+            "description": "",
+            "tags": ["documentation", "web", "reference"],
+            "favicon": null
+        }
+    ]
 }

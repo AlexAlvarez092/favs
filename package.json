@@ -1,0 +1,35 @@
+{
+    "name": "favs",
+    "version": "1.0.0",
+    "description": "A personal website for browsing and organizing favorite links across devices and browsers, published on GitHub Pages.",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "astro dev",
+        "enrich": "tsx src/scripts/enrichFavorites.ts",
+        "build": "npm run enrich && astro build",
+        "preview": "astro preview",
+        "check": "astro check"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AlexAlvarez092/favs.git"
+    },
+    "keywords": [],
+    "author": "Alex Alvarez",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/AlexAlvarez092/favs/issues"
+    },
+    "homepage": "https://github.com/AlexAlvarez092/favs#readme",
+    "dependencies": {
+        "astro": "^6.1.7"
+    },
+    "devDependencies": {
+        "@types/node": "^25.6.0",
+        "eslint": "^10.2.0",
+        "prettier": "^3.8.3",
+        "tsx": "^4.20.6",
+        "typescript": "^5.9.3"
+    }
+}

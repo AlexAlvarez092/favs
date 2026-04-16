@@ -1,0 +1,38 @@
+---
+import type { Favorite } from "../data/schema";
+
+interface Props {
+  favorite: Favorite;
+}
+
+const { favorite } = Astro.props;
+---
+
+<article
+  class="favorite-card"
+  data-favorite
+  data-search={`${favorite.url} ${favorite.description}`.toLowerCase()}
+  data-tags={favorite.tags.join("|")}
+>
+  <a href={favorite.url} target="_blank" rel="noreferrer" class="card-link">
+    <div class="card-header">
+      {
+        favorite.favicon ? (
+          <img src={favorite.favicon} alt="" class="favicon" loading="lazy" />
+        ) : (
+          <span class="favicon-placeholder" aria-hidden="true">◌</span>
+        )
+      }
+      <div>
+        <h2>{favorite.title}</h2>
+        <p class="url">{favorite.url}</p>
+      </div>
+    </div>
+    <p class="description">{favorite.description || "No description available yet."}</p>
+    <ul class="tag-list" aria-label="Tags">
+      {favorite.tags.map((tag) => (
+        <li class="tag">#{tag}</li>
+      ))}
+    </ul>
+  </a>
+</article>

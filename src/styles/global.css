@@ -1,0 +1,83 @@
+:root {
+  --bg: #f4f0ea;
+  --bg-deep: #e8dccf;
+  --surface: #fffaf3;
+  --surface-strong: #fffbf7;
+  --text: #1f1b18;
+  --muted: #665d56;
+  --accent: #b93c2d;
+  --accent-soft: #f0c4bd;
+  --line: #d8cabb;
+  --card-shadow: 0 18px 40px rgba(91, 51, 33, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Work Sans", "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 12% 10%, #f9dfc5 0, transparent 32%),
+    radial-gradient(circle at 88% 22%, #f8d7dc 0, transparent 35%),
+    linear-gradient(160deg, var(--bg), var(--bg-deep));
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Fraunces", "Iowan Old Style", "Georgia", serif;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.app-shell {
+  width: min(1160px, 92vw);
+  margin: 0 auto;
+  padding: 2.2rem 0 3rem;
+}
+
+.hero {
+  display: grid;
+  gap: 0.85rem;
+  margin-bottom: 1.6rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5.8vw, 4rem);
+  line-height: 1.03;
+  max-width: 13ch;
+}
+
+.subtitle {
+  max-width: 58ch;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 768px) {
+  .app-shell {
+    width: min(96vw, 720px);
+    padding-top: 1.6rem;
+  }
+}

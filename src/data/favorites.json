@@ -1,0 +1,42 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-04-16T17:57:12.202Z",
+  "favorites": [
+    {
+      "id": "github",
+      "url": "https://github.com",
+      "title": "GitHub",
+      "description": "Code hosting and collaboration platform.",
+      "tags": [
+        "development",
+        "git",
+        "tools"
+      ],
+      "favicon": "https://github.com/fluidicon.png"
+    },
+    {
+      "id": "astro-docs",
+      "url": "https://docs.astro.build",
+      "title": "Astro Documentation",
+      "description": "",
+      "tags": [
+        "development",
+        "documentation",
+        "frontend"
+      ],
+      "favicon": "https://docs.astro.build/favicon.ico"
+    },
+    {
+      "id": "mdn-web-docs",
+      "url": "https://developer.mozilla.org",
+      "title": "MDN Web Docs",
+      "description": "",
+      "tags": [
+        "documentation",
+        "web",
+        "reference"
+      ],
+      "favicon": "https://developer.mozilla.org/favicon.ico"
+    }
+  ]
+}

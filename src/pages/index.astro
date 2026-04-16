@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import FavoritesList from "../components/FavoritesList.astro";
+import SearchBox from "../components/SearchBox.astro";
+import TagFilter from "../components/TagFilter.astro";
+import favoritesData from "../data/favorites.json";
+import "../styles/components.css";
+
+const favorites = favoritesData.favorites;
+const tags = [...new Set(favorites.flatMap((favorite) => favorite.tags))].sort();
+---
+
+<BaseLayout title="favs | Favorite Links">
+  <section class="controls-shell">
+    <SearchBox />
+    <TagFilter tags={tags} />
+  </section>
+
+  <FavoritesList favorites={favorites} />
+
+  <script>
+    const searchInput = document.querySelector("#search-input");
+    const tagButtons = Array.from(document.querySelectorAll(".tag-toggle"));
+    const cards = Array.from(document.querySelectorAll("[data-favorite]"));
+    const resultsCount = document.querySelector("#results-count");
+    const emptyState = document.querySelector("#empty-state");
+
+    const activeTags = new Set();
+
+    const updateFilters = () => {
+      const query = (searchInput?.value || "").trim().toLowerCase();
+      let visible = 0;
+
+      cards.forEach((card) => {
+        const searchSource = card.getAttribute("data-search") || "";
+        const tagsAttr = card.getAttribute("data-tags") || "";
+        const cardTags = tagsAttr ? tagsAttr.split("|") : [];
+
+        const matchesQuery = !query || searchSource.includes(query);
+        const matchesTags =
+          activeTags.size === 0 || [...activeTags].every((tag) => cardTags.includes(tag));
+
+        const shouldShow = matchesQuery && matchesTags;
+        card.toggleAttribute("hidden", !shouldShow);
+
+        if (shouldShow) {
+          visible += 1;
+        }
+      });
+
+      if (resultsCount) {
+        resultsCount.textContent = String(visible);
+      }
+
+      if (emptyState) {
+        emptyState.toggleAttribute("hidden", visible !== 0);
+      }
+    };
+
+    searchInput?.addEventListener("input", updateFilters);
+
+    tagButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const tag = button.getAttribute("data-tag");
+        if (!tag) return;
+
+        if (activeTags.has(tag)) {
+          activeTags.delete(tag);
+          button.setAttribute("aria-pressed", "false");
+          button.classList.remove("active");
+        } else {
+          activeTags.add(tag);
+          button.setAttribute("aria-pressed", "true");
+          button.classList.add("active");
+        }
+
+        updateFilters();
+      });
+    });
+  </script>
+</BaseLayout>

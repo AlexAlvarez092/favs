@@ -1,0 +1,18 @@
+---
+interface Props {
+  tags: string[];
+}
+
+const { tags } = Astro.props;
+---
+
+<section class="tag-filter" aria-label="Filter by tags">
+  <p>Filter by tags</p>
+  <div class="tag-controls" id="tag-controls">
+    {tags.map((tag) => (
+      <button type="button" class="tag-toggle" data-tag={tag} aria-pressed="false">
+        {tag}
+      </button>
+    ))}
+  </div>
+</section>

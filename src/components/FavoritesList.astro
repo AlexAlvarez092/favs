@@ -1,0 +1,24 @@
+---
+import type { Favorite } from "../data/schema";
+import FavoriteCard from "./FavoriteCard.astro";
+
+interface Props {
+  favorites: Favorite[];
+}
+
+const { favorites } = Astro.props;
+---
+
+<section>
+  <div class="results-head">
+    <p>
+      <span id="results-count">{favorites.length}</span> favorites
+    </p>
+  </div>
+
+  <div class="favorites-grid" id="favorites-grid">
+    {favorites.map((favorite) => <FavoriteCard favorite={favorite} />)}
+  </div>
+
+  <p id="empty-state" class="empty-state" hidden>No favorites match the current search/filter.</p>
+</section>

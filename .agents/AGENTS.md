@@ -141,130 +141,6 @@ interface FavoritesData {
 The enrichment script should populate missing favicons and descriptions, writing the result as `src/data/favorites.json`.
 This enriched file is what Astro reads and renders.
 
-## Implementation Steps (In Order)
-
-### Phase 1: Project Setup
-
-For detailed Astro project setup, configuration, and CLI reference, see the `astro` skill.
-
-Quick checklist for this project:
-
-- Initialize an Astro project with the minimal starter template and strict TypeScript
-- Install dependencies: `astro`, `typescript`, `@types/node`, and optionally `eslint` and `prettier`
-- Configure `astro.config.mjs` and `tsconfig.json`:
-    - Set `outDir: './dist'` for GitHub Pages compatibility
-    - Ensure TypeScript strict mode is enabled
-    - Astro outputs static HTML only (no SSR needed)
-
-### Phase 2: Data Layer
-
-1. **Create `src/data/schema.ts`**
-    - Define `Favorite` and `FavoritesData` interfaces
-    - Export a validation function to ensure data integrity
-
-2. **Create `src/data/favoritesRaw.json`**
-    - Start with a minimal set of 3-5 example favorites
-    - Use valid URLs and realistic tags
-    - Leave favicon and empty description fields empty for enrichment
-
-3. **Create `src/scripts/enrichFavorites.ts`**
-    - Read `favoritesRaw.json`
-    - For each favorite with missing favicon, attempt to fetch from `<domain>/favicon.ico`
-    - For each favorite with empty description, attempt to fetch from the target site and extract meta description
-    - Write normalized output to `src/data/favorites.json`
-    - Handle errors gracefully (missing data does not crash the build)
-    - Add a npm script: `npm run enrich` that runs this before build
-
-### Phase 3: UI Components
-
-1. **Create `src/layouts/BaseLayout.astro`**
-    - Global HTML structure (header, nav, footer skeleton)
-    - Include global styles
-    - Set viewport meta tag for responsive design
-
-2. **Create `src/components/FavoriteCard.astro`**
-    - Display a single favorite as a card or list row
-    - Show favicon, title, description, and tags
-    - Make click-through to the URL work
-    - Ensure favicon gracefully degraded if missing (use a default icon)
-
-3. **Create `src/components/SearchBox.astro`**
-    - Text input that filters favorites in real-time
-    - Emit a custom event or use client-side JavaScript
-    - Search matches URL and description (case-insensitive)
-
-4. **Create `src/components/TagFilter.astro`**
-    - Display available tags as clickable buttons or checkboxes
-    - Allow multi-select
-    - Work in combination with search
-
-5. **Create `src/components/FavoritesList.astro`**
-    - Render all filtered favorites
-    - Integrate search and tag filtering together
-    - Show "no results" message if needed
-
-### Phase 4: Pages and Interaction
-
-1. **Create `src/pages/index.astro`**
-    - The main page; use BaseLayout
-    - Import FavoritesList, SearchBox, TagFilter
-    - Add a simple header with the project name
-
-2. **Add client-side interactivity** (minimal JavaScript)
-    - Search input should filter the list in real-time
-    - Tag clicks should toggle filtering
-    - Both controls should work together
-    - Keep this simple; consider using plain JavaScript or a lightweight library
-
-### Phase 5: Styling
-
-1. **Create `src/styles/global.css`**
-    - Reset/normalize styles
-    - Define color scheme (light or dark, user preference if feasible)
-    - Responsive typography
-
-2. **Create `src/styles/components.css`**
-    - Card layout and shadows
-    - Button and input styling
-    - Responsive breakpoints for mobile, tablet, desktop
-
-3. **Ensure responsive design**
-    - Mobile-first approach
-    - Breakpoints: 480px (mobile), 768px (tablet), 1024px (desktop)
-    - Touch targets at least 44×44 pixels on mobile
-
-### Phase 6: Build and Deployment
-
-1. **Add a GitHub Actions workflow** (`.github/workflows/deploy.yml`)
-    - Trigger on push to main branch (or on-demand)
-    - Check out code, install dependencies
-    - Run `npm run enrich` to populate favicon and descriptions
-    - Run `npm run build` to generate static site
-    - Deploy dist folder to GitHub Pages using `actions/deploy-pages@v2`
-
-2. **Configure GitHub Pages**
-    - In repository settings, enable Pages
-    - Select GitHub Actions as the deployment source
-    - Verify the site is live at `https://<username>.github.io/favs`
-
-### Phase 7: Testing and Iteration
-
-1. **Manual testing**
-    - Test search on different devices and browsers
-    - Verify responsive layout at 375px, 768px, 1024px widths
-    - Confirm tag filtering works correctly
-    - Check that missing favicons display a fallback
-
-2. **Data validation**
-    - Ensure all URLs are valid HTTP/HTTPS
-    - Verify no duplicate IDs
-    - Confirm tags are lowercase and no duplicates within an entry
-
-3. **Build verification**
-    - Run the enrichment script locally and verify output
-    - Check that `npm run build` produces valid HTML
-    - Inspect generated HTML for JavaScript payload size
-
 ## Search Behavior Specification
 
 - Search input: single text field, updates in real-time as user types
@@ -277,30 +153,6 @@ Example:
 - User types "github" → shows only favorites with "github" in URL or description
 - User clicks tag "development" → further narrows to development-related items
 - User clears search → shows all development-tagged items
-
-## Responsive Design Expectations
-
-### Mobile (< 768px)
-
-- Full-width layout, vertical stacking
-- Search box prominent at top
-- Tags displayed as horizontal scroll or wrapped rows
-- Cards show favicon, title, and one-line description
-- Tap targets at least 44×44 pixels
-
-### Tablet (768px – 1024px)
-
-- Sidebar or top navigation for filters
-- 2-column card grid or single-column list
-- Same search and tag functionality
-- Balanced spacing and touch targets
-
-### Desktop (> 1024px)
-
-- Sidebar filter panel on left (tags)
-- Main content area showing card grid (2-3 columns)
-- Search box at top
-- Compact, scannable layout prioritizing quick browsing
 
 ## Important Assumptions And Fallbacks
 
@@ -320,7 +172,8 @@ Expected scripts in `package.json`:
         "dev": "astro dev",
         "build": "npm run enrich && astro build",
         "enrich": "node --loader ts-node/esm src/scripts/enrichFavorites.ts",
-        "preview": "astro preview"
+        "preview": "astro preview",
+        "check": "astro check"
     }
 }
 ```
@@ -348,15 +201,9 @@ Expected scripts in `package.json`:
 5. **Keep the site lightweight.** Minimize JavaScript and dependencies.
 6. **Test on real mobile devices or browser dev tools.** Responsive design matters.
 
-## Deployment Verification
+## Skills
 
-After GitHub Actions workflow runs:
-
-1. Visit `https://<username>.github.io/favs` in a browser
-2. Search for a known favorite URL or keyword
-3. Click a tag and verify filtering
-4. Test on a mobile device or browser dev tools
-5. Verify all links work and open the correct pages
+The folder `.agents/` contains detailed documentation on the skills needed to implement this project, review all of them to understand the technical requirements and best practices for each part of the implementation. Do not implement any part of the project without first reviewing the relevant skills documentation.
 
 ## Future Extension Points (Out Of Scope For Now)
 

@@ -1,151 +1,244 @@
 .controls-shell {
   display: grid;
   gap: 0.9rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.8rem;
+  animation: fadeUp 0.7s ease-out 0.4s both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .search-panel {
   display: grid;
-  gap: 0.45rem;
+  gap: 0.5rem;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 
 .search-panel input {
   width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 999px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
   background: var(--surface);
   color: var(--text);
   font: inherit;
-  padding: 0.82rem 1.1rem;
-  transition: border-color 0.2s ease;
+  font-size: 1rem;
+  padding: 0.95rem 1.3rem;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2px 8px rgba(91, 51, 33, 0.04);
+}
+
+.search-panel input::placeholder {
+  color: color-mix(in srgb, var(--muted) 60%, transparent);
+  font-style: italic;
+}
+
+.search-panel input:hover {
+  border-color: color-mix(in srgb, var(--accent) 20%, var(--line));
+  box-shadow: 0 4px 12px rgba(91, 51, 33, 0.08);
 }
 
 .search-panel input:focus {
-  outline: 2px solid color-mix(in srgb, var(--accent) 40%, white);
+  outline: none;
   border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--glow), 0 6px 20px rgba(185, 60, 45, 0.15);
 }
 
 .tag-filter {
   display: grid;
-  gap: 0.5rem;
+  gap: 0.65rem;
+  padding-top: 0.3rem;
 }
 
 .tag-filter p {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .tag-controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .tag-toggle {
-  border: 1px solid var(--line);
+  border: 2px solid var(--line);
   background: var(--surface);
   color: var(--text);
-  border-radius: 999px;
-  padding: 0.44rem 0.82rem;
+  border-radius: 8px;
+  padding: 0.5rem 0.95rem;
   cursor: pointer;
-  font-size: 0.88rem;
-  transition: all 0.2s ease;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  white-space: nowrap;
 }
 
 .tag-toggle:hover {
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  border-color: var(--accent-secondary);
+  background: color-mix(in srgb, var(--accent) 5%, var(--surface));
+  transform: translateY(-2px);
 }
 
 .tag-toggle.active {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
   color: #fff;
-  border-color: var(--accent);
+  border-color: var(--accent-tertiary);
+  box-shadow: 0 6px 16px rgba(185, 60, 45, 0.25);
+  font-weight: 600;
 }
 
 .results-head {
-  margin: 1rem 0 0.8rem;
+  margin: 1.4rem 0 1.2rem;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .favorites-grid {
   display: grid;
-  gap: 0.9rem;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  animation: fadeUp 0.8s ease-out 0.5s both;
 }
 
 .favorite-card {
   background: var(--surface-strong);
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: 14px;
   box-shadow: var(--card-shadow);
   overflow: hidden;
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform, box-shadow;
+}
+
+.favorite-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.favorite-card:hover::before {
+  opacity: 1;
+}
+
+.favorite-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: color-mix(in srgb, var(--accent) 30%, var(--line));
 }
 
 .card-link {
   text-decoration: none;
   color: inherit;
   display: grid;
-  gap: 0.8rem;
-  padding: 1rem;
-  min-height: 210px;
+  gap: 0.85rem;
+  padding: 1.2rem;
+  min-height: 220px;
+  transition: background-color 0.2s ease;
+}
+
+.card-link:hover {
+  background: color-mix(in srgb, var(--accent) 2%, var(--surface-strong));
 }
 
 .card-header {
   display: grid;
   grid-template-columns: auto 1fr;
-  align-items: center;
-  gap: 0.7rem;
+  align-items: flex-start;
+  gap: 0.8rem;
 }
 
 .favicon,
 .favicon-placeholder {
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   border-radius: 8px;
-  border: 1px solid var(--line);
+  border: 1.5px solid var(--line);
   display: grid;
   place-items: center;
   background: #fff;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(91, 51, 33, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-link:hover .favicon,
+.card-link:hover .favicon-placeholder {
+  transform: scale(1.08);
+  box-shadow: 0 4px 8px rgba(91, 51, 33, 0.12);
 }
 
 .card-header h2 {
-  font-size: 1.15rem;
-  line-height: 1.12;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .url {
-  margin-top: 0.15rem;
+  margin-top: 0.2rem;
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-weight: 500;
+  opacity: 0.8;
 }
 
 .description {
   color: var(--text);
-  font-size: 0.94rem;
-  line-height: 1.38;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  font-weight: 400;
 }
 
 .tag-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem;
+  gap: 0.4rem;
   padding: 0;
-  margin: 0;
+  margin: 0.1rem 0 0;
   list-style: none;
 }
 
 .tag {
-  background: var(--accent-soft);
+  background: linear-gradient(135deg, var(--accent-soft) 0%, color-mix(in srgb, var(--accent-soft) 80%, white) 100%);
   color: #5b251e;
-  padding: 0.2rem 0.45rem;
-  border-radius: 999px;
-  font-size: 0.78rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+  border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.tag:hover {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-soft) 90%, white) 0%, var(--accent-soft) 100%);
+  transform: scale(1.05);
 }
 
 .empty-state {

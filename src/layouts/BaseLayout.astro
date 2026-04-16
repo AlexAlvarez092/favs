@@ -15,17 +15,14 @@ const { title = "favs" } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="A personal website for browsing and organizing favorite links." />
     <title>{title}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div class="app-shell">
       <header class="hero">
-        <p class="eyebrow">✨ Welcome to favs</p>
-        <h1>Your links, refined</h1>
+        <p class="eyebrow">favs</p>
+        <h1>Your favorite links</h1>
         <p class="subtitle">
-          Curated bookmarks with smart search and filters. Beautiful, fast, and built for the way you browse.
+          Browse your bookmarks. Instant search and filters. Fast, clean, and simple.
         </p>
       </header>
       <main>
@@ -34,29 +31,3 @@ const { title = "favs" } = Astro.props;
     </div>
   </body>
 </html>
-
-<style is:global>
-  /* Smooth scroll behavior */
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /* Custom scrollbar for modern browsers */
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: color-mix(in srgb, #b93c2d 30%, transparent);
-    border-radius: 999px;
-    transition: background 0.2s ease;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: color-mix(in srgb, #b93c2d 50%, transparent);
-  }
-</style>

@@ -1,6 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import crypto from "node:crypto";
 
 import {
     normalizeTags,
@@ -33,9 +34,22 @@ function generateId(url: string): string {
             .split(".")[0]
             .toLowerCase()
             .replace(/[^a-z0-9]/g, "-");
-        return slug;
+
+        // Create a hash from the full URL to ensure uniqueness
+        const hash = crypto
+            .createHash("md5")
+            .update(url)
+            .digest("hex")
+            .slice(0, 8);
+
+        return slug ? `${slug}-${hash}` : `favorite-${hash}`;
     } catch {
-        return `favorite-${Math.random().toString(36).slice(2, 9)}`;
+        const hash = crypto
+            .createHash("md5")
+            .update(url)
+            .digest("hex")
+            .slice(0, 10);
+        return `favorite-${hash}`;
     }
 }
 
@@ -130,6 +144,7 @@ async function enrichFavorite(favorite: Favorite): Promise<Favorite> {
     let id = favorite.id?.trim() || "";
     let title = favorite.title?.trim() || "";
     let description = favorite.description?.trim() || "";
+    let tags = favorite.tags || [];
     let favicon = favorite.favicon;
 
     if (!id) {
@@ -160,11 +175,11 @@ async function enrichFavorite(favorite: Favorite): Promise<Favorite> {
     }
 
     return {
-        ...favorite,
         id,
+        url: favorite.url,
         title,
         description,
-        tags: normalizeTags(favorite.tags),
+        tags: normalizeTags(tags),
         favicon,
     };
 }

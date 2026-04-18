@@ -1,10 +1,10 @@
 export interface Favorite {
-    id: string;
+    id?: string;
     url: string;
-    title: string;
-    description: string;
-    tags: string[];
-    favicon: string | null;
+    title?: string;
+    description?: string;
+    tags?: string[];
+    favicon?: string | null;
 }
 
 export interface FavoritesData {
@@ -24,8 +24,8 @@ export function isValidHttpUrl(input: string): boolean {
     }
 }
 
-export function normalizeTags(tags: string[]): string[] {
-    const normalized = tags
+export function normalizeTags(tags: string[] | undefined): string[] {
+    const normalized = (tags || [])
         .map((tag) => tag.trim().toLowerCase())
         .filter(Boolean);
     return [...new Set(normalized)];
@@ -44,23 +44,22 @@ export function validateFavoritesData(data: FavoritesData): string[] {
         return errors;
     }
 
-    for (const favorite of data.favorites) {
-        if (!favorite.id) {
-            errors.push("Favorite entry missing id.");
-            continue;
-        }
-
-        if (ids.has(favorite.id)) {
-            errors.push(`Duplicate favorite id: ${favorite.id}`);
-        }
-        ids.add(favorite.id);
+    for (let index = 0; index < data.favorites.length; index++) {
+        const favorite = data.favorites[index];
 
         if (!isValidHttpUrl(favorite.url)) {
-            errors.push(`Invalid URL for ${favorite.id}: ${favorite.url}`);
+            errors.push(`Favorite [${index}] has invalid URL: ${favorite.url}`);
         }
 
-        if (!Array.isArray(favorite.tags)) {
-            errors.push(`Tags for ${favorite.id} must be an array.`);
+        if (favorite.tags && !Array.isArray(favorite.tags)) {
+            errors.push(`Favorite [${index}] tags must be an array.`);
+        }
+
+        if (favorite.id) {
+            if (ids.has(favorite.id)) {
+                errors.push(`Duplicate favorite id: ${favorite.id}`);
+            }
+            ids.add(favorite.id);
         }
     }
 

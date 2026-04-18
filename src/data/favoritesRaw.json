@@ -3,236 +3,156 @@
     "lastUpdated": "2026-04-16T00:00:00Z",
     "favorites": [
         {
-            "id": "",
             "url": "https://www.antenasmoviles.es",
-            "title": "",
-            "description": "",
-            "tags": ["online-tools"],
-            "favicon": null
+            "tags": ["online-tools"]
         },
         {
-            "id": "",
             "url": "https://codi.link",
-            "title": "",
-            "description": "",
-            "tags": ["ide", "online-tools"],
-            "favicon": null
+            "tags": ["ide", "online-tools"]
         },
         {
-            "id": "",
             "url": "https://cssgridgenerator.io",
-            "title": "",
-            "description": "",
-            "tags": ["css", "online-tools", "ux/ui"],
-            "favicon": null
+            "tags": ["css", "online-tools", "ux/ui"]
         },
         {
-            "id": "",
             "url": "https://layout.bradwoods.io",
-            "title": "",
-            "description": "",
-            "tags": ["css", "online-tools", "ux/ui"],
-            "favicon": null
+            "tags": ["css", "online-tools", "ux/ui"]
         },
         {
-            "id": "",
             "url": "https://digger.tools",
-            "title": "",
-            "description": "",
-            "tags": ["online-tools"],
-            "favicon": null
+            "tags": ["online-tools"]
         },
         {
-            "id": "",
             "url": "https://www.favicon-generator.org",
-            "title": "",
-            "description": "",
-            "tags": ["online-tools", "favicon", "ux/ui"],
-            "favicon": null
+            "tags": ["online-tools", "favicon", "ux/ui"]
         },
         {
-            "id": "",
             "url": "https://www.drawdb.app",
-            "title": "",
-            "description": "",
-            "tags": ["db", "online-tools"],
-            "favicon": null
+            "tags": ["db", "online-tools"]
         },
         {
-            "id": "",
             "url": "https://neon.new",
-            "title": "",
-            "description": "",
-            "tags": ["db", "online-tools"],
-            "favicon": null
+            "tags": ["db", "online-tools"]
         },
         {
-            "id": "",
             "url": "https://jsoncrack.com",
-            "title": "",
-            "description": "",
-            "tags": ["json", "online-tools"],
-            "favicon": null
+            "tags": ["json", "online-tools"]
         },
         {
-            "id": "",
             "url": "https://www.iamsajid.com",
-            "title": "",
-            "description": "",
-            "tags": ["ux/ui", "online-tools"],
-            "favicon": null
+            "tags": ["ux/ui", "online-tools"]
         },
         {
-            "id": "",
             "url": "https://quicktype.io",
-            "title": "",
-            "description": "",
-            "tags": ["json", "online-tools"],
-            "favicon": null
+            "tags": ["json", "online-tools"]
         },
         {
-            "id": "",
             "url": "https://www.snippetshot.com",
-            "title": "",
-            "description": "",
-            "tags": ["online-tools"],
-            "favicon": null
+            "tags": ["online-tools"]
         },
         {
-            "id": "",
             "url": "https://supabase.com",
-            "title": "",
-            "description": "",
-            "tags": ["online-tools", "db"],
-            "favicon": null
+            "tags": ["online-tools", "db"]
         },
         {
-            "id": "",
             "url": "https://transform.tools",
-            "title": "",
-            "description": "",
-            "tags": ["online-tools"],
-            "favicon": null
+            "tags": ["online-tools"]
         },
         {
-            "id": "",
             "url": "https://apps.apple.com/us/app/amphetamine/id937984704?mt=12",
-            "title": "",
-            "description": "",
-            "tags": ["osx-app"],
-            "favicon": null
+            "tags": ["osx-app"]
         },
         {
-            "id": "",
             "url": "https://www.beekeeperstudio.io",
-            "title": "",
-            "description": "",
-            "tags": ["osx-app"],
-            "favicon": null
+            "tags": ["osx-app"]
         },
         {
-            "id": "",
             "url": "https://www.usebruno.com",
-            "title": "",
-            "description": "",
-            "tags": ["osx-app"],
-            "favicon": null
+            "tags": ["osx-app"]
         },
         {
-            "id": "",
             "url": "https://github.com/Mortennn/Dozer",
-            "title": "",
-            "description": "",
-            "tags": ["osx-app"],
-            "favicon": null
+            "tags": ["osx-app"]
         },
         {
-            "id": "",
             "url": "https://github.com/lgarron/folderify",
-            "title": "",
-            "description": "",
-            "tags": ["osx-app"],
-            "favicon": null
+            "tags": ["osx-app"]
         },
         {
-            "id": "",
             "url": "https://gif.ski",
-            "title": "",
-            "description": "",
-            "tags": ["osx-app"],
-            "favicon": null
+            "tags": ["osx-app"]
         },
         {
-            "id": "",
             "url": "https://icemenubar.app",
-            "title": "",
-            "description": "",
-            "tags": ["osx-app"],
-            "favicon": null
+            "tags": ["osx-app"]
         },
         {
-            "id": "",
             "url": "https://github.com/keycastr/keycastr",
-            "title": "",
-            "description": "",
-            "tags": ["osx-app"],
-            "favicon": null
+            "tags": ["osx-app"]
         },
         {
-            "id": "",
             "url": "https://sergii.tatarenkov.name/keyclu/support/",
-            "title": "",
-            "description": "",
-            "tags": ["osx-app"],
-            "favicon": null
+            "tags": ["osx-app"]
         },
         {
-            "id": "",
             "url": "https://github.com/tw93/Mole",
-            "title": "",
-            "description": "",
-            "tags": ["osx-app"],
-            "favicon": null
+            "tags": ["osx-app"]
         },
         {
-            "id": "",
             "url": "https://github.com/MonitorControl/MonitorControl",
-            "title": "",
-            "description": "",
-            "tags": ["osx-app"],
-            "favicon": null
+            "tags": ["osx-app"]
         },
         {
-            "id": "",
             "url": "https://runjs.app",
-            "title": "",
-            "description": "",
-            "tags": ["osx-app"],
-            "favicon": null
+            "tags": ["osx-app"]
         },
         {
-            "id": "",
             "url": "https://shottr.cc",
-            "title": "",
-            "description": "",
-            "tags": ["osx-app"],
-            "favicon": null
+            "tags": ["osx-app"]
         },
         {
-            "id": "",
             "url": "https://github.com/exelban/stats",
-            "title": "",
-            "description": "",
-            "tags": ["osx-app"],
-            "favicon": null
+            "tags": ["osx-app"]
         },
         {
-            "id": "",
             "url": "https://apps.apple.com/us/app/velja/id1607635845?mt=12",
-            "title": "",
-            "description": "",
-            "tags": ["osx-app"],
-            "favicon": null
+            "tags": ["osx-app"]
+        },
+        {
+            "url": "https://basicappleguy.com/basicappleblog/category/Wallpaper",
+            "tags": ["fun", "apple"]
+        },
+        {
+            "url": "https://dontasktoask.com",
+            "tags": ["fun"]
+        },
+        {
+            "url": "https://www.flightradar24.com/51.47,0.46/6",
+            "tags": ["online-tools"]
+        },
+        {
+            "url": "https://nohello.net/es/",
+            "tags": ["fun"]
+        },
+        {
+            "url": "https://haveibeenpwned.com",
+            "tags": ["online-tools", "security"]
+        },
+        {
+            "url": "https://radio.garden/visit/zaragoza/lInCFBpH",
+            "tags": ["online-tools"]
+        },
+        {
+            "url": "https://xyproblem.info",
+            "tags": ["fun"]
+        },
+        {
+            "url": "https://theyseeyourphotos.com",
+            "tags": ["fun", "online-tools"]
+        },
+        {
+            "url": "https://en.wikipedia.org/wiki/You_aren't_gonna_need_it",
+            "tags": ["fun", "programming-principles"]
         }
     ]
 }

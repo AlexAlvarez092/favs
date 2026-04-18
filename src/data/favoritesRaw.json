@@ -113,6 +113,126 @@
             "description": "",
             "tags": ["online-tools"],
             "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://apps.apple.com/us/app/amphetamine/id937984704?mt=12",
+            "title": "",
+            "description": "",
+            "tags": ["osx-app"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://www.beekeeperstudio.io",
+            "title": "",
+            "description": "",
+            "tags": ["osx-app"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://www.usebruno.com",
+            "title": "",
+            "description": "",
+            "tags": ["osx-app"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://github.com/Mortennn/Dozer",
+            "title": "",
+            "description": "",
+            "tags": ["osx-app"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://github.com/lgarron/folderify",
+            "title": "",
+            "description": "",
+            "tags": ["osx-app"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://gif.ski",
+            "title": "",
+            "description": "",
+            "tags": ["osx-app"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://icemenubar.app",
+            "title": "",
+            "description": "",
+            "tags": ["osx-app"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://github.com/keycastr/keycastr",
+            "title": "",
+            "description": "",
+            "tags": ["osx-app"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://sergii.tatarenkov.name/keyclu/support/",
+            "title": "",
+            "description": "",
+            "tags": ["osx-app"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://github.com/tw93/Mole",
+            "title": "",
+            "description": "",
+            "tags": ["osx-app"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://github.com/MonitorControl/MonitorControl",
+            "title": "",
+            "description": "",
+            "tags": ["osx-app"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://runjs.app",
+            "title": "",
+            "description": "",
+            "tags": ["osx-app"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://shottr.cc",
+            "title": "",
+            "description": "",
+            "tags": ["osx-app"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://github.com/exelban/stats",
+            "title": "",
+            "description": "",
+            "tags": ["osx-app"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://apps.apple.com/us/app/velja/id1607635845?mt=12",
+            "title": "",
+            "description": "",
+            "tags": ["osx-app"],
+            "favicon": null
         }
     ]
 }

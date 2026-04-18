@@ -13,10 +13,16 @@ const tags = [...new Set(favorites.flatMap((favorite) => favorite.tags))].sort()
 <BaseLayout title="favs | Favorite Links">
   <section class="controls-shell">
     <SearchBox />
-    <TagFilter tags={tags} />
   </section>
 
-  <FavoritesList favorites={favorites} />
+  <section class="content-layout">
+    <aside class="tags-panel">
+      <TagFilter tags={tags} />
+    </aside>
+    <div class="favorites-panel">
+      <FavoritesList favorites={favorites} />
+    </div>
+  </section>
 
   <script>
     const searchInput = document.querySelector("#search-input");
@@ -24,6 +30,10 @@ const tags = [...new Set(favorites.flatMap((favorite) => favorite.tags))].sort()
     const cards = Array.from(document.querySelectorAll("[data-favorite]"));
     const resultsCount = document.querySelector("#results-count");
     const emptyState = document.querySelector("#empty-state");
+    const favoritesGrid = document.querySelector("#favorites-grid");
+    const viewButtons = Array.from(document.querySelectorAll(".view-toggle-btn"));
+    const desktopViewMedia = window.matchMedia("(min-width: 768px)");
+    let desktopView = "grid";
 
     const activeTags = new Set();
 
@@ -77,5 +87,40 @@ const tags = [...new Set(favorites.flatMap((favorite) => favorite.tags))].sort()
         updateFilters();
       });
     });
+
+    const setView = (view, persistDesktop = true) => {
+      if (!favoritesGrid) return;
+
+      favoritesGrid.setAttribute("data-view", view);
+
+      if (persistDesktop && desktopViewMedia.matches) {
+        desktopView = view;
+      }
+
+      viewButtons.forEach((button) => {
+        const isActive = button.getAttribute("data-view") === view;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+    };
+
+    const applyResponsiveView = () => {
+      if (desktopViewMedia.matches) {
+        setView(desktopView, false);
+      } else {
+        setView("list", false);
+      }
+    };
+
+    viewButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const view = button.getAttribute("data-view");
+        if (!view) return;
+        setView(view);
+      });
+    });
+
+    applyResponsiveView();
+    desktopViewMedia.addEventListener("change", applyResponsiveView);
   </script>
 </BaseLayout>

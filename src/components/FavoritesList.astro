@@ -11,12 +11,18 @@ const { favorites } = Astro.props;
 
 <section>
   <div class="results-head">
-    <p>
-      <span id="results-count">{favorites.length}</span> favorites
-    </p>
+    <p><span id="results-count">{favorites.length}</span> favorites</p>
+    <div class="view-toggle" role="group" aria-label="View mode">
+      <button type="button" class="view-toggle-btn active" data-view="grid" aria-pressed="true">
+        Grid
+      </button>
+      <button type="button" class="view-toggle-btn" data-view="list" aria-pressed="false">
+        List
+      </button>
+    </div>
   </div>
 
-  <div class="favorites-grid" id="favorites-grid">
+  <div class="favorites-grid" id="favorites-grid" data-view="grid">
     {favorites.map((favorite) => <FavoriteCard favorite={favorite} />)}
   </div>
 

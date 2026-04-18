@@ -43,9 +43,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3 {
+h1 {
     font-family:
         "SF Pro Display",
         -apple-system,
@@ -56,27 +54,10 @@ h3 {
     margin: 0;
     font-weight: 600;
     letter-spacing: -0.28px;
-}
-
-h1 {
-    font-size: 56px;
-    line-height: 1.07;
-    font-weight: 600;
-    letter-spacing: -0.28px;
-}
-
-h2 {
     font-size: 28px;
     line-height: 1.14;
     font-weight: 400;
     letter-spacing: 0.196px;
-}
-
-h3 {
-    font-size: 21px;
-    line-height: 1.19;
-    font-weight: 700;
-    letter-spacing: 0.231px;
 }
 
 p {
@@ -94,7 +75,7 @@ a {
 
 a:hover {
     color: var(--sk-focus-color);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 a:focus {
@@ -109,39 +90,6 @@ a:focus {
     padding: 48px 20px;
 }
 
-.hero {
-    display: grid;
-    gap: 24px;
-    margin-bottom: 48px;
-    text-align: center;
-}
-
-.eyebrow {
-    font-family:
-        "SF Pro Text",
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1.33;
-    letter-spacing: -0.12px;
-    text-transform: uppercase;
-    color: var(--sk-black-48);
-}
-
-.subtitle {
-    max-width: 58ch;
-    margin: 0 auto;
-    color: var(--sk-black-80);
-    font-size: 17px;
-    line-height: 1.47;
-    font-weight: 400;
-    letter-spacing: -0.374px;
-}
-
 main {
     width: 100%;
 }
@@ -153,18 +101,8 @@ main {
         line-height: 1.1;
     }
 
-    h2 {
-        font-size: 24px;
-        line-height: 1.17;
-    }
-
     .app-shell {
         padding: 32px 16px;
-    }
-
-    .hero {
-        gap: 16px;
-        margin-bottom: 32px;
     }
 }
 
@@ -174,18 +112,8 @@ main {
         line-height: 1.13;
     }
 
-    h2 {
-        font-size: 20px;
-        line-height: 1.2;
-    }
-
     .app-shell {
         padding: 24px 12px;
-    }
-
-    .hero {
-        gap: 12px;
-        margin-bottom: 24px;
     }
 }
 

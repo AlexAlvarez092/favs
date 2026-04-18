@@ -208,13 +208,6 @@
     min-height: 220px;
 }
 
-.card-link:focus h2,
-.card-link:focus-visible h2,
-.card-link:focus .description,
-.card-link:focus-visible .description {
-    text-decoration: none;
-}
-
 .card-header {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -238,18 +231,13 @@
     flex-shrink: 0;
 }
 
-.card-header h2 {
+.card-header h1 {
     margin: 0;
     font-size: 21px;
     line-height: 1.18;
     font-weight: 600;
     letter-spacing: -0.24px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
     overflow: hidden;
-    text-decoration: none;
 }
 
 .url {
@@ -268,12 +256,13 @@
     font-size: 15px;
     line-height: 1.45;
     letter-spacing: -0.2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     line-clamp: 3;
-    overflow: hidden;
-    text-decoration: none;
 }
 
 .tag-list {

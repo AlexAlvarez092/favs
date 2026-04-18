@@ -12,7 +12,7 @@ const { favorite } = Astro.props;
   class="favorite-card"
   data-favorite
   data-search={`${favorite.url} ${favorite.description}`.toLowerCase()}
-  data-tags={favorite.tags.join("|")}
+  data-tags={(favorite.tags ?? []).join("|")}
 >
   <a href={favorite.url} target="_blank" rel="noreferrer" class="card-link">
     <div class="card-header">
@@ -30,7 +30,7 @@ const { favorite } = Astro.props;
     </div>
     <p class="description">{favorite.description || "No description available yet."}</p>
     <ul class="tag-list" aria-label="Tags">
-      {favorite.tags.map((tag) => (
+      {(favorite.tags ?? []).map((tag) => (
         <li class="tag">#{tag}</li>
       ))}
     </ul>

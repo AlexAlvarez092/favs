@@ -25,6 +25,20 @@ function escapeRegExp(value: string): string {
     return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+function generateId(url: string): string {
+    try {
+        const parsed = new URL(url);
+        const hostname = parsed.hostname.replace(/^www\./, "");
+        const slug = hostname
+            .split(".")[0]
+            .toLowerCase()
+            .replace(/[^a-z0-9]/g, "-");
+        return slug;
+    } catch {
+        return `favorite-${Math.random().toString(36).slice(2, 9)}`;
+    }
+}
+
 function extractMetaContent(
     html: string,
     key: string,
@@ -113,9 +127,14 @@ function extractIconHref(html: string): string | null {
 }
 
 async function enrichFavorite(favorite: Favorite): Promise<Favorite> {
+    let id = favorite.id?.trim() || "";
     let title = favorite.title?.trim() || "";
     let description = favorite.description?.trim() || "";
     let favicon = favorite.favicon;
+
+    if (!id) {
+        id = generateId(favorite.url);
+    }
 
     try {
         const html = await fetchHtml(favorite.url);
@@ -142,6 +161,7 @@ async function enrichFavorite(favorite: Favorite): Promise<Favorite> {
 
     return {
         ...favorite,
+        id,
         title,
         description,
         tags: normalizeTags(favorite.tags),
@@ -153,13 +173,6 @@ async function run(): Promise<void> {
     const raw = await readFile(rawDataPath, "utf8");
     const parsed = JSON.parse(raw) as FavoritesData;
 
-    const validationErrors = validateFavoritesData(parsed);
-    if (validationErrors.length > 0) {
-        throw new Error(
-            `Data validation failed:\n- ${validationErrors.join("\n- ")}`,
-        );
-    }
-
     const favorites = await Promise.all(parsed.favorites.map(enrichFavorite));
 
     const enriched: FavoritesData = {
@@ -167,6 +180,13 @@ async function run(): Promise<void> {
         lastUpdated: new Date().toISOString(),
         favorites,
     };
+
+    const validationErrors = validateFavoritesData(enriched);
+    if (validationErrors.length > 0) {
+        throw new Error(
+            `Data validation failed:\n- ${validationErrors.join("\n- ")}`,
+        );
+    }
 
     await writeFile(
         outputDataPath,

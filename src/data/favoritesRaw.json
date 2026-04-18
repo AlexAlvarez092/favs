@@ -3,27 +3,115 @@
     "lastUpdated": "2026-04-16T00:00:00Z",
     "favorites": [
         {
-            "id": "github",
-            "url": "https://github.com",
+            "id": "",
+            "url": "https://www.antenasmoviles.es",
             "title": "",
             "description": "",
-            "tags": ["development", "git", "tools"],
+            "tags": ["online-tools"],
             "favicon": null
         },
         {
-            "id": "astro-docs",
-            "url": "https://docs.astro.build",
+            "id": "",
+            "url": "https://codi.link",
             "title": "",
             "description": "",
-            "tags": ["development", "documentation", "frontend"],
+            "tags": ["ide", "online-tools"],
             "favicon": null
         },
         {
-            "id": "mdn-web-docs",
-            "url": "https://developer.mozilla.org",
+            "id": "",
+            "url": "https://cssgridgenerator.io",
             "title": "",
             "description": "",
-            "tags": ["documentation", "web", "reference"],
+            "tags": ["css", "online-tools", "ux/ui"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://layout.bradwoods.io",
+            "title": "",
+            "description": "",
+            "tags": ["css", "online-tools", "ux/ui"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://digger.tools",
+            "title": "",
+            "description": "",
+            "tags": ["online-tools"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://www.favicon-generator.org",
+            "title": "",
+            "description": "",
+            "tags": ["online-tools", "favicon", "ux/ui"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://www.drawdb.app",
+            "title": "",
+            "description": "",
+            "tags": ["db", "online-tools"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://neon.new",
+            "title": "",
+            "description": "",
+            "tags": ["db", "online-tools"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://jsoncrack.com",
+            "title": "",
+            "description": "",
+            "tags": ["json", "online-tools"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://www.iamsajid.com",
+            "title": "",
+            "description": "",
+            "tags": ["ux/ui", "online-tools"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://quicktype.io",
+            "title": "",
+            "description": "",
+            "tags": ["json", "online-tools"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://www.snippetshot.com",
+            "title": "",
+            "description": "",
+            "tags": ["online-tools"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://supabase.com",
+            "title": "",
+            "description": "",
+            "tags": ["online-tools", "db"],
+            "favicon": null
+        },
+        {
+            "id": "",
+            "url": "https://transform.tools",
+            "title": "",
+            "description": "",
+            "tags": ["online-tools"],
             "favicon": null
         }
     ]

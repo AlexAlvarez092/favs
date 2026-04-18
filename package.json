@@ -23,9 +23,11 @@
     },
     "homepage": "https://github.com/AlexAlvarez092/favs#readme",
     "dependencies": {
-        "astro": "^6.1.7"
+        "astro": "^6.1.7",
+        "he": "^1.2.0"
     },
     "devDependencies": {
+        "@types/he": "^1.2.3",
         "@types/node": "^25.6.0",
         "eslint": "^10.2.0",
         "prettier": "^3.8.3",

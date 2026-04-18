@@ -208,6 +208,13 @@
     min-height: 220px;
 }
 
+.card-link:focus h2,
+.card-link:focus-visible h2,
+.card-link:focus .description,
+.card-link:focus-visible .description {
+    text-decoration: none;
+}
+
 .card-header {
     display: grid;
     grid-template-columns: auto 1fr;

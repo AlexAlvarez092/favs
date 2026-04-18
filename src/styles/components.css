@@ -237,7 +237,11 @@
     line-height: 1.18;
     font-weight: 600;
     letter-spacing: -0.24px;
-    overflow-wrap: anywhere;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
 }
 
 .url {
@@ -256,6 +260,11 @@
     font-size: 15px;
     line-height: 1.45;
     letter-spacing: -0.2px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
 }
 
 .tag-list {

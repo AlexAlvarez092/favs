@@ -24,11 +24,11 @@ const { favorite } = Astro.props;
         )
       }
       <div>
-        <h2>{favorite.title}</h2>
+        <h2 title={favorite.title}>{favorite.title}</h2>
         <p class="url">{favorite.url}</p>
       </div>
     </div>
-    <p class="description">{favorite.description || "No description available yet."}</p>
+    <p class="description" title={favorite.description || ""}>{favorite.description || "No description available yet."}</p>
     <ul class="tag-list" aria-label="Tags">
       {(favorite.tags ?? []).map((tag) => (
         <li class="tag">#{tag}</li>

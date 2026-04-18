@@ -22,8 +22,60 @@ const META_REFRESH_REGEX =
 const ICON_REGEX =
     /<link[^>]*rel=["'][^"']*icon[^"']*["'][^>]*href=["']([^"']+)["'][^>]*>/i;
 
+const NAMED_HTML_ENTITIES: Record<string, string> = {
+    amp: "&",
+    apos: "'",
+    quot: '"',
+    lt: "<",
+    gt: ">",
+    nbsp: " ",
+    rsquo: "'",
+    lsquo: "'",
+    rdquo: '"',
+    ldquo: '"',
+    ndash: "-",
+    mdash: "-",
+    hellip: "...",
+    copy: "(c)",
+    reg: "(r)",
+    trade: "TM",
+};
+
 function escapeRegExp(value: string): string {
     return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function decodeHtmlEntities(value: string): string {
+    return value.replace(
+        /&(#x?[0-9a-f]+|[a-z][a-z0-9]+);/gi,
+        (match, entity) => {
+            if (!entity) {
+                return match;
+            }
+
+            if (entity[0] === "#") {
+                const isHex = entity[1]?.toLowerCase() === "x";
+                const rawCodePoint = isHex ? entity.slice(2) : entity.slice(1);
+                const codePoint = Number.parseInt(
+                    rawCodePoint,
+                    isHex ? 16 : 10,
+                );
+
+                if (!Number.isFinite(codePoint)) {
+                    return match;
+                }
+
+                try {
+                    return String.fromCodePoint(codePoint);
+                } catch {
+                    return match;
+                }
+            }
+
+            const normalizedEntity = entity.toLowerCase();
+            return NAMED_HTML_ENTITIES[normalizedEntity] ?? match;
+        },
+    );
 }
 
 function generateId(url: string): string {
@@ -142,8 +194,8 @@ function extractIconHref(html: string): string | null {
 
 async function enrichFavorite(favorite: Favorite): Promise<Favorite> {
     let id = favorite.id?.trim() || "";
-    let title = favorite.title?.trim() || "";
-    let description = favorite.description?.trim() || "";
+    let title = decodeHtmlEntities(favorite.title?.trim() || "");
+    let description = decodeHtmlEntities(favorite.description?.trim() || "");
     let tags = favorite.tags || [];
     let favicon = favorite.favicon;
 
@@ -155,11 +207,11 @@ async function enrichFavorite(favorite: Favorite): Promise<Favorite> {
         const html = await fetchHtml(favorite.url);
 
         if (!title) {
-            title = extractTitle(html) || "";
+            title = decodeHtmlEntities(extractTitle(html) || "");
         }
 
         if (!description) {
-            description = extractDescription(html) || "";
+            description = decodeHtmlEntities(extractDescription(html) || "");
         }
 
         if (!favicon) {

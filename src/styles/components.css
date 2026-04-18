@@ -215,6 +215,10 @@
     gap: 10px;
 }
 
+.card-header > div {
+    min-width: 0;
+}
+
 .favicon,
 .favicon-placeholder {
     width: 30px;
@@ -228,10 +232,12 @@
 }
 
 .card-header h2 {
+    margin: 0;
     font-size: 21px;
     line-height: 1.18;
     font-weight: 600;
     letter-spacing: -0.24px;
+    overflow-wrap: anywhere;
 }
 
 .url {

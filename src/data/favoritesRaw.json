@@ -8,43 +8,43 @@
         },
         {
             "url": "https://codi.link",
-            "tags": ["ide", "online-tools"]
+            "tags": ["ide", "online-tools", "programming"]
         },
         {
             "url": "https://cssgridgenerator.io",
-            "tags": ["css", "online-tools", "ux/ui"]
+            "tags": ["css", "online-tools", "ux/ui", "programming"]
         },
         {
             "url": "https://layout.bradwoods.io",
-            "tags": ["css", "online-tools", "ux/ui"]
+            "tags": ["css", "online-tools", "ux/ui", "programming"]
         },
         {
             "url": "https://digger.tools",
-            "tags": ["online-tools"]
+            "tags": ["online-tools", "programming"]
         },
         {
             "url": "https://www.favicon-generator.org",
-            "tags": ["online-tools", "favicon", "ux/ui"]
+            "tags": ["online-tools", "favicon", "ux/ui", "programming"]
         },
         {
             "url": "https://www.drawdb.app",
-            "tags": ["db", "online-tools"]
+            "tags": ["db", "online-tools", "programming"]
         },
         {
             "url": "https://neon.new",
-            "tags": ["db", "online-tools"]
+            "tags": ["db", "online-tools", "programming"]
         },
         {
             "url": "https://jsoncrack.com",
-            "tags": ["json", "online-tools"]
+            "tags": ["json", "online-tools", "programming"]
         },
         {
             "url": "https://www.iamsajid.com",
-            "tags": ["ux/ui", "online-tools"]
+            "tags": ["ux/ui", "online-tools", "programming"]
         },
         {
             "url": "https://quicktype.io",
-            "tags": ["json", "online-tools"]
+            "tags": ["json", "online-tools", "programming"]
         },
         {
             "url": "https://www.snippetshot.com",
@@ -52,11 +52,11 @@
         },
         {
             "url": "https://supabase.com",
-            "tags": ["online-tools", "db"]
+            "tags": ["online-tools", "db", "programming"]
         },
         {
             "url": "https://transform.tools",
-            "tags": ["online-tools"]
+            "tags": ["online-tools", "programming"]
         },
         {
             "url": "https://apps.apple.com/us/app/amphetamine/id937984704?mt=12",
@@ -152,7 +152,178 @@
         },
         {
             "url": "https://en.wikipedia.org/wiki/You_aren't_gonna_need_it",
-            "tags": ["fun", "programming-principles"]
+            "tags": ["programming-principles", "programming", "education"]
+        },
+        {
+            "url": "https://github.com/airbnb/javascript",
+            "tags": ["js", "guidelines", "programming", "education"]
+        },
+        {
+            "url": "https://www.alg0.dev",
+            "tags": ["programming", "algorithms", "education"]
+        },
+        {
+            "url": "https://github.com/ryanmcdermott/clean-code-javascript",
+            "tags": ["js", "guidelines", "programming", "education"]
+        },
+        {
+            "url": "https://code.org/en-US",
+            "tags": ["programming", "education"]
+        },
+        {
+            "url": "https://cs.fyi",
+            "tags": ["programming", "ux/ui", "education"]
+        },
+        {
+            "url": "https://web.stanford.edu/class/cs253/",
+            "tags": ["programming", "security", "education"]
+        },
+        {
+            "url": "https://roadmap.sh",
+            "tags": ["programming", "education"]
+        },
+        {
+            "url": "https://exercism.org",
+            "tags": ["programming", "fun", "education"]
+        },
+        {
+            "url": "https://www.freecodecamp.org",
+            "tags": ["programming", "fun", "education"]
+        },
+        {
+            "url": "https://microsoft.github.io/generative-ai-for-beginners/#/translations/es/README?id=_21-lecciones-que-enseñan-todo-lo-que-necesitas-saber-para-comenzar-a-construir-aplicaciones-de-ia-generativa",
+            "tags": ["ai", "education", "programming"]
+        },
+        {
+            "url": "https://learngitbranching.js.org/?locale=es_ES",
+            "tags": ["programming", "git", "education"]
+        },
+        {
+            "url": "https://losapuntesdemajo.vercel.app",
+            "tags": ["programming", "education"]
+        },
+        {
+            "url": "https://www.patterns.dev",
+            "tags": ["programming", "education", "patterns"]
+        },
+        {
+            "url": "https://quickref.me",
+            "tags": ["programming", "education", "cheatsheet"]
+        },
+        {
+            "url": "https://refactoring.guru",
+            "tags": ["programming", "education", "refactoring", "patterns"]
+        },
+        {
+            "url": "https://ux-pm.com",
+            "tags": ["programming", "education", "ux/ui"]
+        },
+        {
+            "url": "https://web.dev/learn/javascript/welcome?hl=es-419",
+            "tags": ["programming", "education", "js"]
+        },
+        {
+            "url": "https://allsvgicons.com",
+            "tags": ["programming", "resources", "icons"]
+        },
+        {
+            "url": "https://calltoinspiration.com",
+            "tags": ["programming", "resources", "web-components"]
+        },
+        {
+            "url": "https://free-for.dev/#/?id=free-fordev",
+            "tags": ["programming", "resources", "index"]
+        },
+        {
+            "url": "https://freesets.dev",
+            "tags": ["programming", "resources", "index"]
+        },
+        {
+            "url": "https://htmlrev.com",
+            "tags": ["programming", "resources", "templates"]
+        },
+        {
+            "url": "https://developer.apple.com/design/human-interface-guidelines",
+            "tags": [
+                "programming",
+                "apple",
+                "ux/ui",
+                "education",
+                "guidelines",
+                "human-interface"
+            ]
+        },
+        {
+            "url": "https://publicapis.dev",
+            "tags": ["programming", "resources", "api"]
+        },
+        {
+            "url": "https://magecdn.com/tools/svg-loaders",
+            "tags": ["programming", "resources", "spinner", "web-components"]
+        },
+        {
+            "url": "https://svgl.app",
+            "tags": ["programming", "resources", "company-logos"]
+        },
+        {
+            "url": "https://vscodethemes.com",
+            "tags": ["resources", "theme", "ide"]
+        },
+        {
+            "url": "https://codecreative.io",
+            "tags": ["programming", "servicenow", "blog"]
+        },
+        {
+            "url": "https://nowben.com",
+            "tags": ["programming", "servicenow", "blog"]
+        },
+        {
+            "url": "https://qualityclouds.com",
+            "tags": ["programming", "servicenow", "blog"]
+        },
+        {
+            "url": "https://pishchulin.medium.com",
+            "tags": ["programming", "servicenow", "blog"]
+        },
+        {
+            "url": "https://sapphirenow.dev",
+            "tags": ["programming", "servicenow", "blog"]
+        },
+        {
+            "url": "https://cezarybasta.dev",
+            "tags": ["programming", "servicenow", "blog"]
+        },
+        {
+            "url": "https://davidmac.pro",
+            "tags": ["programming", "servicenow", "blog"]
+        },
+        {
+            "url": "https://www.dominiksimunek.com",
+            "tags": ["programming", "servicenow", "blog"]
+        },
+        {
+            "url": "https://jace.pro",
+            "tags": ["programming", "servicenow", "blog"]
+        },
+        {
+            "url": "https://jessems.com",
+            "tags": ["programming", "servicenow", "blog"]
+        },
+        {
+            "url": "https://john-james-andersen.com",
+            "tags": ["programming", "servicenow", "blog"]
+        },
+        {
+            "url": "https://kevinclark.com.au",
+            "tags": ["programming", "servicenow", "blog"]
+        },
+        {
+            "url": "https://www.lukaszszumilas.com",
+            "tags": ["programming", "servicenow", "blog"]
+        },
+        {
+            "url": "https://rubenferrero.com",
+            "tags": ["programming", "servicenow", "blog"]
         }
     ]
 }
